@@ -3,7 +3,7 @@ from .models import Author, Genre, Book, BookInstance, Language
 
 class BooksInstanceInline(admin.TabularInline):
     model = BookInstance
-    
+
 @admin.register(Book)
 class BookAdmin(admin.ModelAdmin):
     list_display = ('title', 'author', 'display_genre')
@@ -21,6 +21,7 @@ class AuthorAdmin(admin.ModelAdmin):
 #admin.site.register(Author, AuthorAdmin)
 @admin.register(BookInstance)
 class BookInstanceAdmin(admin.ModelAdmin):
+    list_display = ('book', 'status', 'due_back', 'id')
     list_filter = ('status','due_back')
     fieldsets = (
         (None, {
