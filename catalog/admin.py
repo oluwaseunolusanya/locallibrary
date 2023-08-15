@@ -15,7 +15,7 @@ class AuthorAdmin(admin.ModelAdmin):
 #admin.site.register(Author, AuthorAdmin)
 @admin.register(BookInstance)
 class BookInstanceAdmin(admin.ModelAdmin):
-    pass
+    list_filter = ('status','due_back')
 
 #admin.site.register(BookInstance,BookInstanceAdmin)
 
